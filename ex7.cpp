@@ -17,7 +17,8 @@ int main(){
  cin >> a; 
  cout<<"Please enter an int non negative power: ";
  cin>>n;
- cout << pow_k(a,n); 
+ if (n<0) cout<<"This number is negative";
+ else cout << pow_k(a,n); 
  return 0;
 
 }

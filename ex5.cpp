@@ -12,9 +12,9 @@ else{
   for (int k=2;k==n;k=k+1){ 
     int i=a+b;
     a=b;
-    b=i;
-    return i;
-  }
+    b=i;}
+  cout<<i;
+}
 //I cannot understand why it doesn't recognise i as a variable, I also tried ::i but it didn't work.
   
 }
