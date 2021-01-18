@@ -2,9 +2,9 @@
 using namespace std;
 
 int sum_k(int k){
-if (k==0||k==1)
+  if (k==0||k==1)
   return k;
-return k+sum_k(k-1);
+  return sum_k(k-1)+sum_k(k-2);
 }
 
 int main(){
