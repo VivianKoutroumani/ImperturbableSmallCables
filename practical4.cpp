@@ -14,7 +14,7 @@ double * read_poly(int &n){
   return c;
 }
 
-
+//exercise 1
 double value(double *c,int n, int x){//Calculating the value of polynomial
   double a=0;
   for (int i=0;i<=n;i++){
@@ -36,7 +36,7 @@ void print_poly(double *c, int n){
   cout << endl;
 }
 
-
+//exercise2
 double * poli_sum (double * p1, int d1, double * p2, int d2, int & dr){
     int i;
     dr=max(d1,d2);
@@ -59,12 +59,37 @@ double * poli_sum (double * p1, int d1, double * p2, int d2, int & dr){
       cout << p1[i] << "*x^" << i << " + ";}
   
 }
-
+//exercise 3
 double * poli_product(double *p1,int d1, double * p2, int d2){
-int i, j;
-for (i=0;i<=d1;i++)
-  for (j=0;j<=d2;j++)
-    cout<<p1[i]*p2[j]<<"*x^"<<i+j<<"+";
+  double * a1 =new double[(d1+1)*(d2+1)];
+  double * a2 = new double[(d1+1)*(d2+1)];
+  int c = 0;
+  for (int i=0;i<=d1;i++){
+    for (int j=0;j<=d2;j++){
+       a1[c] = p1[i]*p2[j];
+       a2[c] = i+j;
+       c +=1;
+       
+    }
+  }
+  double * newarray = new double[d1+d2+1];
+  for (int i=0;i<=d1+d2;i++){
+    newarray[i]=0;
+    for (int j=0;j<=(d1+1)*(d2+1)-1;j++){
+      if(a2[j] == i){
+        newarray[i] += a1[j];
+        
+      }
+    }
+  }
+  cout << newarray[0]<< endl;
+  if (d1+d2+1 > 1){
+    cout << " + ";
+    for (int i=1;i<d1+d2;i++){
+      cout << newarray[i] << "*x^"<< i << " + ";
+    }
+    cout << newarray[d1+d2]<< "*x^"<<d1+d2;
+  }
 }
 
 
@@ -72,8 +97,7 @@ for (i=0;i<=d1;i++)
 
 
 
-int main()
-{
+int main(){
   double *p1,*p2;
   int g1,x, g2, dr;
 
@@ -93,4 +117,4 @@ int main()
 
   delete[] p1,p2;
   return 0;
-}
+  }
