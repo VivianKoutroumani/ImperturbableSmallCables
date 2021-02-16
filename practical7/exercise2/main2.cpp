@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 int main(){
-  Stack<int> a = Stack <int>(5);
+  Stack<int> a = Stack <int> (5);
 
   a.print();
   a.push(8);
