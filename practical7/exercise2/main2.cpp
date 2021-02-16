@@ -1,7 +1,7 @@
 #include "stackI.hpp"
 #include "stack.hpp"
 #include <iostream>
-using namespace std;
+
 int main(int argc, const char *argv[]){
   Stack<int> s = Stack <int> (5);
 
@@ -17,6 +17,4 @@ int main(int argc, const char *argv[]){
   s.print();
 
   return 0;
-
-
 }

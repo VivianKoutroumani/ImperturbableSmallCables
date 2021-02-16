@@ -1,4 +1,4 @@
-#ifnden Stack_hpp
+#ifndef Stack_hpp
 #define Stack_hpp
 #include<stdio.h>
 #include<iostream>
@@ -22,7 +22,7 @@ template<typename T>class Stack:StackI<T>{
 
   Stack(int i){
     s[i];
-    topindex=0;
+    top1=0;
     elements=0;
     size=i;
   }
