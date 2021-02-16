@@ -2,19 +2,19 @@
 #include "stack.hpp"
 #include <iostream>
 using namespace std;
-int main(){
-  Stack<int> a = Stack <int> (5);
+int main(int argc, const char *argv[]){
+  Stack<int> s = Stack <int> (5);
 
-  a.print();
-  a.push(8);
-  a.push(6);
-  a.push(9);
-  a.push(3);
-  a.push(1);
-  a.print();
-  a.pop();
-  a.pop();
-  a.print();
+  s.print();
+  s.push(8);
+  s.push(6);
+  s.push(9);
+  s.push(3);
+  s.push(1);
+  s.print();
+  s.pop();
+  s.pop();
+  s.print();
 
   return 0;
 

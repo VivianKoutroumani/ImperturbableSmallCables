@@ -7,17 +7,17 @@ using namespace std;
 
 template<typename T>class Stack:StackI<T>{
   protected:
-  int top1;
-  int elements;//number of elemnts
-  int size;
-  T s[];
+    int top1;
+    int elements;//number of elemnts
+    int size;
+    T s[];
 
   public:
-  Stack(){
-    s[20];
-    top1=0;
-    elements=0;
-    size=0;
+    Stack(){
+      s[20];
+      top1=0;
+      elements=0;
+      size=20;
   }
 
   Stack(int i){
@@ -26,17 +26,23 @@ template<typename T>class Stack:StackI<T>{
     elements=0;
     size=i;
   }
-void push(T t){
-  if (elements>=0&& elements<size){
-    s[top1++]=t;
-    elements++;
+  void push(T t){
+    if (elements>=0 && elements<size){
+      s[top1++]=t;
+      elements++;
+    }
   }
-}
-T top(){
-  if (elements>0){
-    return s[top1];
+  void pop(){
+    if(elements>0){
+      --top1;
+      --elements;
+    }
   }
-  else return s[0];
+  T top(){
+    if (elements>0){
+      return s[top1];
+    }
+    else return s[0];
 
   void print(){
     if (elements==0){
@@ -44,7 +50,7 @@ T top(){
     }
     else{
       for(int i=top1-1;i>=0;i--){
-        cout<<s[i]<<endl;
+        cout << s[i] << endl; 
       }
     }
 

@@ -6,7 +6,7 @@
 #include "Patient.hpp"
 using namespace std;
 
-int main() {
+int main(int argc, const char *argv[]) {
 Patient mary("Mary");
 Patient john("John");
 mary.addRecord(Blood(94,61, Date(2,5,2013)));
